@@ -90,7 +90,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
-<div class="page" id="one">
+<div class="page" id="two">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
@@ -99,14 +99,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         <p>Are your eyes watery or itchy?</p>    
     	</div>
 	
-<divclass="page" id="two">
+<div class="page" id="two">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <div>
-  <a href="#two" onclick="allergyAdd();"class="w3-button w3-black">Yes</a>
+  <a href="#three" onclick="allergyAdd();"class="w3-button w3-black">Yes</a>
 
- <a href="#two" onclick="coldAdd();"class="w3-button w3-black">No</a>
+ <a href="#three" onclick="coldAdd();"class="w3-button w3-black">No</a>
 </div>
 
 	<style>	
@@ -132,7 +132,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </style>
 	</div>
 
-<div class="page" id="two">
+<div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
@@ -140,47 +140,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
 	</div>
-<divclass="page" id="two">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<div>
-  <a href="#three" onclick="coldAdd();"class="w3-button w3-black">Yes</a>
-
- <a href="#three" onclick="allergyAdd();"class="w3-button w3-black">No</a>
-</div>
-
-	<style>	
-.body {
-     margin: 0em;
-}
-
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
-}
-
-  .page:target {
-    left: 0vw;
-    z-index: 1;
-}
-</style>
-	</div>
-	<div class="page" id="three">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>Do you have a sore throat?</p>
-	</div>
-<divclass="page" id="three">
+<div class="page" id="three">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -189,7 +149,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
  <a href="#four" onclick="allergyAdd();"class="w3-button w3-black">No</a>
 </div>
-<style>	
+
+	<style>	
 .body {
      margin: 0em;
 }
@@ -213,20 +174,59 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	<div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p>
+	</div>
+<div class="page" id="four">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div>
+  <a href="#five" onclick="coldAdd();"class="w3-button w3-black">Yes</a>
+
+ <a href="#five" onclick="allergyAdd();"class="w3-button w3-black">No</a>
+</div>
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+	</div>
+	<div class="page" id="five">
+	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
 	</div>
-<divclass="page" id="four">
+<div class="page" id="five">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <div>
-  <a href="#five" onclick="allergyAdd();"class="w3-button w3-black">Yes</a>
+  <a href="#six" onclick="allergyAdd();"class="w3-button w3-black">Yes</a>
 
- <a href="#five" onclick="coldAdd();"class="w3-button w3-black">No</a>
+ <a href="#six" onclick="coldAdd();"class="w3-button w3-black">No</a>
 </div>	
 
 		<style>	
