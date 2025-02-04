@@ -240,55 +240,53 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 }
 </style>
 
-<div class="page" id="results">
-    <div id="content" class="w3-container">
-        <p id="resultsText">Click below to see your results.</p>
-        <a href="#" id="resultsBtn" class="w3-button w3-black">Get Results</a>
-    </div>
-</div>
-
 <script>
-    // Load stored values from localStorage (or set to 0 if not found)
-    var allergy_count = parseInt(localStorage.getItem("allergy_count")) || 0;
-    var cold_count = parseInt(localStorage.getItem("cold_count")) || 0;
+    // Ensure stored values persist across pages
+    if (!localStorage.getItem("allergy_count")) localStorage.setItem("allergy_count", 0);
+    if (!localStorage.getItem("cold_count")) localStorage.setItem("cold_count", 0);
 
     function allergyAdd() {
-        allergy_count++;
-        localStorage.setItem("allergy_count", allergy_count); // Store updated value
+        let count = parseInt(localStorage.getItem("allergy_count")) || 0;
+        localStorage.setItem("allergy_count", count + 1);
     }
 
     function coldAdd() {
-        cold_count++;
-        localStorage.setItem("cold_count", cold_count); // Store updated value
+        let count = parseInt(localStorage.getItem("cold_count")) || 0;
+        localStorage.setItem("cold_count", count + 1);
     }
 
     function displayResults() {
-        var total = allergy_count + cold_count;
-        var resultsText = document.getElementById("resultsText");
+        let allergy_count = parseInt(localStorage.getItem("allergy_count")) || 0;
+        let cold_count = parseInt(localStorage.getItem("cold_count")) || 0;
+        let total = allergy_count + cold_count;
+        let resultsText = document.getElementById("resultsText");
 
         if (total === 0) {
             resultsText.innerHTML = "No responses recorded. Please answer the questions.";
             return;
         }
 
-        var allergyPercent = Math.round((allergy_count / total) * 100);
-        var coldPercent = Math.round((cold_count / total) * 100);
+        let allergyPercent = Math.round((allergy_count / total) * 100);
+        let coldPercent = Math.round((cold_count / total) * 100);
 
         resultsText.innerHTML = 
-            "Probability it is allergies = " + allergyPercent + "%<br>" + 
-            "Probability it is a cold = " + coldPercent + "%";
+            `<p>Probability it is allergies = ${allergyPercent}%</p>
+             <p>Probability it is a cold = ${coldPercent}%</p>`;
+
+        // Reset counts for next attempt
+        resetCounts();
+    }
+
+    function resetCounts() {
+        localStorage.setItem("allergy_count", 0);
+        localStorage.setItem("cold_count", 0);
     }
 
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("resultsBtn").addEventListener("click", displayResults);
     });
-
-    // Clear stored data when starting over
-    function resetCounts() {
-        localStorage.removeItem("allergy_count");
-        localStorage.removeItem("cold_count");
-    }
 </script>
+		
 
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
