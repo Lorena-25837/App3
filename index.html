@@ -170,7 +170,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     z-index: 1;
 }
 </style>
-	</div>
+</div>
 	<div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
@@ -179,6 +179,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
 	</div>
+		
 <divclass="page" id="three">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -188,6 +189,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
  <a href="#four" onclick="allergyAdd();"class="w3-button w3-black">No</a>
 </div>
+	
 <style>	
 .body {
      margin: 0em;
@@ -218,6 +220,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
 	</div>
+		
 <divclass="page" id="four">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -250,7 +253,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 }
 </style>
 
-	<p id="results"></p>
+	<p class="page" id="results"></p>
 	var resultText = document.getElementById("results");
 	resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
 
