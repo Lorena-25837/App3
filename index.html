@@ -239,21 +239,23 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     z-index: 1;
 }
 </style>
-</div>
 	<div class="page" id="results">
-	<div id="content" class="w3-container">
-	<p id="results"></p>
+    <div id="content" class="w3-container">
+        <p id="resultsText"></p>
+        <a href="#" onclick="displayResults();" class="w3-button w3-black">Get Results</a>
+    </div>
 </div>
-		
-<div>		
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-	<script>
-  <a href="#four" onclick="var resultText = document.getElementById("results");"class="w3-button w3-black">Get Results</a>
-resultText.innerHTML="Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+<script>
+    function displayResults() {
+        var total = allergy_count + cold_count;
+        var allergyPercent = total > 0 ? Math.round((allergy_count / total) * 100) : 0;
+        var coldPercent = total > 0 ? Math.round((cold_count / total) * 100) : 0;
+
+        document.getElementById("resultsText").innerHTML = 
+            "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%";
+    }
 </script>
-	</div><!-- /content -->
 		
 
 
