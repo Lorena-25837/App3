@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Allergy or Cold?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Start Page -->
+<div class="page" id="start">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Allergy or Cold?</h1>
+    </div>
+
+    <div class="w3-container">
+        <p>Do you have allergies or a cold? Answer a few questions to find out.</p>
+        <a href="#question1" class="w3-button w3-black">Start</a>
+    </div>
+
+    <footer class="w3-bottom w3-container w3-flat-carrot">
+        <p>DIY!</p>
+    </footer>
+</div>
+
+<!-- Question 1 -->
+<div class="page" id="question1">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Question 1</h1>
+    </div>
+
+    <div class="w3-container">
+        <p>Do you have a fever?</p>
+        <a href="#question2" onclick="coldAdd()" class="w3-button w3-black">Yes</a>
+        <a href="#question2" onclick="allergyAdd()" class="w3-button w3-black">No</a>
+    </div>
+
+    <footer class="w3-bottom w3-container w3-flat-carrot">
+        <p>DIY!</p>
+    </footer>
+</div>
+
+<!-- Question 2 -->
+<div class="page" id="question2">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Question 2</h1>
+    </div>
+
+    <div class="w3-container">
+        <p>Are your eyes itchy?</p>
+        <a href="#question3" onclick="allergyAdd()" class="w3-button w3-black">Yes</a>
+        <a href="#question3" onclick="coldAdd()" class="w3-button w3-black">No</a>
+    </div>
+
+    <footer class="w3-bottom w3-container w3-flat-carrot">
+        <p>DIY!</p>
+    </footer>
+</div>
+
+<!-- Question 3 -->
+<div class="page" id="question3">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Question 3</h1>
+    </div>
+
+    <div class="w3-container">
+        <p>Do you have body aches?</p>
+        <a href="#results" onclick="coldAdd()" class="w3-button w3-black">Yes</a>
+        <a href="#results" onclick="allergyAdd()" class="w3-button w3-black">No</a>
+    </div>
+
+    <footer class="w3-bottom w3-container w3-flat-carrot">
+        <p>DIY!</p>
+    </footer>
+</div>
+
+<!-- Results Page -->
+<div class="page" id="results">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Results</h1>
+    </div>
+
+    <div class="w3-container">
+        <p id="resultsText">Click below to see your results.</p>
+        <a href="#" id="resultsBtn" class="w3-button w3-black">Get Results</a>
+    </div>
+
+    <footer class="w3-bottom w3-container w3-flat-carrot">
+        <p>DIY!</p>
+    </footer>
+</div>
+
+<script>
+    // Initialize localStorage if not set
+    if (!localStorage.getItem("allergy_count")) localStorage.setItem("allergy_count", 0);
+    if (!localStorage.getItem("cold_count")) localStorage.setItem("cold_count", 0);
+
+    function allergyAdd() {
+        let count = parseInt(localStorage.getItem("allergy_count")) || 0;
+        localStorage.setItem("allergy_count", count + 1);
+    }
+
+    function coldAdd() {
+        let count = parseInt(localStorage.getItem("cold_count")) || 0;
+        localStorage.setItem("cold_count", count + 1);
+    }
+
+    function displayResults() {
+        let allergy_count = parseInt(localStorage.getItem("allergy_count")) || 0;
+        let cold_count = parseInt(localStorage.getItem("cold_count")) || 0;
+        let total = allergy_count + cold_count;
+        let resultsText = document.getElementById("resultsText");
+
+        if (total === 0) {
+            resultsText.innerHTML = "No responses recorded. Please answer the questions.";
+            return;
+        }
+
+        let allergyPercent = Math.round((allergy_count / total) * 100);
+        let coldPercent = Math.round((cold_count / total) * 100);
+
+        resultsText.innerHTML = `
+            <p>Probability it is allergies: ${allergyPercent}%</p>
+            <p>Probability it is a cold: ${coldPercent}%</p>`;
+
+        // Reset counts for next attempt
+        resetCounts();
+    }
+
+    function resetCounts() {
+        localStorage.setItem("allergy_count", 0);
+        localStorage.setItem("cold_count", 0);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("resultsBtn").addEventListener("click", displayResults);
+    });
+</script>
+
+<style>
+    .page {
+        display: none;
+    }
+</style>
+
+<script>
+    // Handle page navigation based on hash change
+    function showPage() {
+        let hash = window.location.hash || "#start";
+        let pages = document.querySelectorAll(".page");
+
+        pages.forEach(page => {
+            page.style.display = "none";
+        });
+
+        document.querySelector(hash).style.display = "block";
+    }
+
+    window.addEventListener("hashchange", showPage);
+    window.addEventListener("load", showPage);
+</script>
+
+</body>
+</html>}
