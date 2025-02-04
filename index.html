@@ -239,16 +239,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     z-index: 1;
 }
 </style>
-
+</div>
 	<div class="page" id="results">
-	<div class="w3-container w3-flat-carrot">
-		<p>"Results"</p>
-
-	</div>
 	<div id="content" class="w3-container">
-	<meta var resultText = document.getElementById("results");
-	<meta resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
-	</div>
+	<p id="results"></p>
+</div>
+		
+<div>		
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <a href="#four" onclick="var resultText = document.getElementById("results");"class="w3-button w3-black">Get Results</a>
+resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+ </div><!-- /content -->
+		
+
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
