@@ -248,15 +248,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>
 
 <script>
-    var allergy_count = 0;
-    var cold_count = 0;
+    // Load stored values from localStorage (or set to 0 if not found)
+    var allergy_count = parseInt(localStorage.getItem("allergy_count")) || 0;
+    var cold_count = parseInt(localStorage.getItem("cold_count")) || 0;
 
     function allergyAdd() {
         allergy_count++;
+        localStorage.setItem("allergy_count", allergy_count); // Store updated value
     }
 
     function coldAdd() {
         cold_count++;
+        localStorage.setItem("cold_count", cold_count); // Store updated value
     }
 
     function displayResults() {
@@ -279,6 +282,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("resultsBtn").addEventListener("click", displayResults);
     });
+
+    // Clear stored data when starting over
+    function resetCounts() {
+        localStorage.removeItem("allergy_count");
+        localStorage.removeItem("cold_count");
+    }
 </script>
 
 
