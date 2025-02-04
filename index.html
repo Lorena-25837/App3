@@ -240,31 +240,46 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 }
 </style>
 
-		<div class="page" id="results">
+<div class="page" id="results">
     <div id="content" class="w3-container">
         <p id="resultsText">Click below to see your results.</p>
-        <a href="#" onclick="displayResults();" class="w3-button w3-black">Get Results</a>
+        <a href="#" id="resultsBtn" class="w3-button w3-black">Get Results</a>
     </div>
 </div>
 
 <script>
+    var allergy_count = 0;
+    var cold_count = 0;
+
+    function allergyAdd() {
+        allergy_count++;
+    }
+
+    function coldAdd() {
+        cold_count++;
+    }
+
     function displayResults() {
         var total = allergy_count + cold_count;
-        
+        var resultsText = document.getElementById("resultsText");
+
         if (total === 0) {
-            document.getElementById("resultsText").innerHTML = "No responses recorded. Please answer the questions.";
+            resultsText.innerHTML = "No responses recorded. Please answer the questions.";
             return;
         }
 
         var allergyPercent = Math.round((allergy_count / total) * 100);
         var coldPercent = Math.round((cold_count / total) * 100);
 
-        document.getElementById("resultsText").innerHTML = 
+        resultsText.innerHTML = 
             "Probability it is allergies = " + allergyPercent + "%<br>" + 
             "Probability it is a cold = " + coldPercent + "%";
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("resultsBtn").addEventListener("click", displayResults);
+    });
 </script>
-		
 
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
