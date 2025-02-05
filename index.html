@@ -36,7 +36,7 @@
             let total = allergy_count + cold_count;
             let allergyPercent = total > 0 ? (allergy_count / total * 100).toFixed(1) : 0;
             let coldPercent = total > 0 ? (cold_count / total * 100).toFixed(1) : 0;
-            document.getElementById("results").innerHTML = 
+            document.getElementById("resultText").innerHTML = 
                 "Probability it is allergies: " + allergyPercent + "%<br>" +
                 "Probability it is a cold: " + coldPercent + "%";
         }
@@ -90,7 +90,7 @@
     <div class="page" id="results">
         <div class="w3-container w3-flat-carrot"><h1>Results</h1></div>
         <div class="w3-container">
-            <p id="results"></p>
+            <p id="resultText"></p>
         </div>
     </div>
 </body>
