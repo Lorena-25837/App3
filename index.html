@@ -52,7 +52,121 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
   </script>
 
+<style>	
+.body {
+     margin: 0em;
+}
 
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+<div class="page" id="header">.  
+<!-- /Page Styling-->
+	
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+<div class="page" id="one">.  
+<!-- /Page Styling-->
+	
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+<!-- /Question 1 -->
+    	<div id="content" class="w3-container">
+        <p>Are your eyes watery and/or itchy?</p>    
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <a href="#two" onclick="allergyAdd();"class="w3-button w3-black">Yes</a>
+
+ <a href="#two" onclick="coldAdd();"class="w3-button w3-black">No</a>
+ </div><!-- /content -->
+	
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+<div class="page" id="two">.  
+<!-- /Page Styling-->
+	
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+<!-- /Question 2 -->
+	<div id="content" class="w3-container">
+		<p>Do you have a fever?</p>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <a href="#three" onclick="coldAdd();"class="w3-button w3-black">Yes</a>
+
+ <a href="#three" onclick="allergyAdd();"class="w3-button w3-black">No</a>
+ </div><!-- /content -->
 
 <style>	
 .body {
@@ -75,52 +189,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     z-index: 1;
 }
 </style>
-
-<body>
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
-</div>
-	
-<div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
-	
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
-	
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
- 	
-	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-
-<div class="page" id="one">
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
-	</div>
-<!-- /Question 1 -->
-    	<div id="content" class="w3-container">
-        <p>Are your eyes watery and/or itchy?</p>    
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-  <a href="#two" onclick="allergyAdd();"class="w3-button w3-black">Yes</a>
-
- <a href="#two" onclick="coldAdd();"class="w3-button w3-black">No</a>
- </div><!-- /content -->
-	
-
-<div class="page" id="two">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1>
-	</div>
-<!-- /Question 2 -->
-	<div id="content" class="w3-container">
-		<p>Do you have a fever?</p>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-  <a href="#three" onclick="coldAdd();"class="w3-button w3-black">Yes</a>
-
- <a href="#three" onclick="allergyAdd();"class="w3-button w3-black">No</a>
- </div><!-- /content -->
+<div class="page" id="three">.  
+<!-- /Page Styling-->
 
 </div>
 	<div class="page" id="three">
@@ -139,6 +209,30 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
  <a href="#four" onclick="allergyAdd();"class="w3-button w3-black">No</a>
  </div><!-- /content -->
 
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+<div class="page" id="four">.  
+<!-- /Page Styling-->
+
 	</div>
 	<div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
@@ -155,6 +249,30 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
  <a href="#results" onclick="coldAdd();"class="w3-button w3-black">No</a>
  </div><!-- /content -->
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+<div class="page" id="five">.  
+<!-- /Page Styling-->
 
 	</div>
 	<div class="page" id="five">
@@ -173,6 +291,30 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
  </div><!-- /content -->
 
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+<div class="page" id="six">.  
+<!-- /Page Styling-->
+
 	</div>
 	<div class="page" id="six">
 	<div class="w3-container w3-flat-carrot">
@@ -189,6 +331,31 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
  <a href="#results" onclick="coldAdd();"class="w3-button w3-black">Severe</a>
  </div><!-- /content -->
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+<div class="page" id="results">.  
+<!-- /Page Styling-->
+
 
     <div class="page" id="results">
         <div class="w3-container w3-flat-carrot"><h1>Results</h1></div>
