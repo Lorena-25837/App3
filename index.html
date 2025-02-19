@@ -50,12 +50,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             cold_count = cold_count + 1;
         }
 
-		function allergyPercent(){
-	allergy_count/(allergy_count+cold_count)*100;
+	function showResults(){
+		var total = cold_count + allergy_count;
+		var allergyPercent = allergy_count/total;
+		var coldPercent = cold_count/total;
+		var paragraph = document.getElementById("Results");
+		var text = "The Probability it is Allergies = " + allergyPercent*100 + "%" + "<br>The Probability it is a Cold =" + coldPercent*100 + "%";
+		paragraph.innerHTML = text;
 	}
-
-	function coldPercent(){
-	cold_count/(allergy_count+cold_count)*100;
 		
 //I've edited this code almost 50 times, save me please
   </script>
@@ -349,8 +351,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<a href="#results" onclick="allergyAdd();"class="w3-button w3-black">Gradual</a>
-<a href="#results" onclick="coldAdd();"class="w3-button w3-black">Severe</a>
+<a href="#results" onclick="allergyAdd(); showResults();"class="w3-button w3-black">Gradual</a>
+<a href="#results" onclick="coldAdd(); showResults();"class="w3-button w3-black">Severe</a>
  </div>
 
 <!-- Question 6 and Styling -->
@@ -389,10 +391,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         <div class="w3-container w3-flat-carrot"><h1>Results</h1></div>
         <div class="w3-container">
             <p id="Results"></p>
-<script>
-var resultText = document.getElementById("Results");resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;          
-</script>
-</div>
+
 </div>
 
 <!-- Results Code Hopefully -->
